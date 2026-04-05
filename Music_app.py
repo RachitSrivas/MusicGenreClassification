@@ -78,7 +78,7 @@ def load_and_preprocess_data(file_path, target_shape=(150, 150)):
 
 #Tensorflow Model Prediction
 def model_prediction(X_test):
-    model = load_model()
+    model = fetch_model()
     y_pred = model.predict(X_test)
     predicted_categories = np.argmax(y_pred,axis=1)
     unique_elements, counts = np.unique(predicted_categories, return_counts=True)
