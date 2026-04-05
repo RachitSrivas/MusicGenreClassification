@@ -1,0 +1,8 @@
+# Ignore Machine Learning Models
+*.h5
+*.keras
+*.npz
+
+# Ignore Python environments
+tf-env/
+__pycache__/
