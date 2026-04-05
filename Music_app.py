@@ -10,6 +10,29 @@ from matplotlib import pyplot
 import numpy as np
 from tensorflow.image import resize
 
+import gdown
+
+# Flip the switch to use the legacy Keras version!
+os.environ["TF_USE_LEGACY_KERAS"] = "1"
+
+# --- NEW DOWNLOAD CODE ---
+MODEL_PATH = "Trained_model.h5"
+# This is the exact ID from the Google Drive link you shared earlier
+DRIVE_FILE_ID = "1hoL_DLAnycV9uoQDaFMXUFGHlv6y85ys" 
+
+@st.cache_resource # This ensures it only downloads ONCE when the app starts
+def fetch_model():
+    if not os.path.exists(MODEL_PATH):
+        with st.spinner("Downloading AI model from Google Drive... Please wait a moment."):
+            url = f"https://drive.google.com/uc?id={DRIVE_FILE_ID}"
+            gdown.download(url, MODEL_PATH, quiet=False)
+    return True
+
+# Run the download check before you do anything else
+fetch_model()
+
+
+
 #Function
 @st.cache_resource()
 def load_model():
