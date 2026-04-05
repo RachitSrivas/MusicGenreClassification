@@ -1,5 +1,7 @@
 # 🎵 Music Genre Classification System
 
+**[🚀 CLICK HERE TO TRY THE LIVE WEB APP!]https://musicgenreclassification-fpyqywt6zb7f4g2upihvxs.streamlit.app/**
+
 An end-to-end **Deep Learning project** that classifies music into different genres using raw audio data.
 
 This system converts audio signals into visual representations (**Mel-Spectrograms**) and uses a **Convolutional Neural Network (CNN)** for accurate predictions.
